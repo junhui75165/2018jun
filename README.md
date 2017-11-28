@@ -1,2 +1,4 @@
-# 2018jun
-个人练习项目
+#开始项目
+npm run dev
+#构建项目
+npm run build

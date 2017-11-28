@@ -1,0 +1,1101 @@
+//@import "../../node_modules/amazeui/less/variables";
+//@import "../../node_modules/amazeui/less/mixins";
+//@import "../../node_modules/amazeui/less/amazeui";
+@import "~antd/dist/antd";
+@import '~rc-tree/assets/index.css';
+
+@font-size-base         : 14px;
+//@icon-url: "/font_qwpyxm4ysjqvvx6r/iconfont";
+html,
+body,
+#content {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.logo{
+  background: url("../img/LOGO.png");
+  background-repeat:no-repeat;
+  background-position: 10%;
+  background-size: 150px;
+  //background-size: contain;
+  width: 100%;
+  height: 150px;
+}
+.login-color{
+  //background: -webkit-linear-gradient(left, #3ec3ef, #9ed2a0); /* Safari 5.1 - 6.0 */
+  //background: -o-linear-gradient(right, #3ec3ef, #9ed2a0); /* Opera 11.1 - 12.0 */
+  //background: -moz-linear-gradient(right, #3ec3ef, #9ed2a0); /* Firefox 3.6 - 15 */
+  //background: linear-gradient(to right, #3ec3ef, #9ed2a0); /* 标准的语法 */
+  //background: url("../img/login-bg.png");
+  background: url("http://cdn.genson.cn/sites/all/themes/professional_theme/images/banner/slidebg1.jpg");
+  background-repeat:no-repeat;
+}
+.ask-page {
+  height: 100%;
+  //overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.full-page{
+  height: 100%;
+  padding: 0;
+  form{
+    position: absolute;
+
+  }
+}
+.trans-form{
+  margin-right: 0;
+  transition: width 2s;
+}
+.login-form{
+  //width: 25%;
+  max-width: 350px;
+  margin: 0 auto;
+  margin-top: 150px;
+  transition: width 2s;
+  -moz-transition: width 2s; /* Firefox 4 */
+  -webkit-transition: width 2s; /* Safari 和 Chrome */
+  -o-transition: width 2s; /* Opera */
+  .login-input{
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    height: 4rem;
+    margin: 1rem 0;
+    padding: 8px;
+
+    img{
+      width: 2rem;
+      height: 2rem;
+    }
+    input{
+      margin-left: 1rem;
+      border: none!important;
+      background: transparent;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      width: 80%;
+      padding-left: 1rem;
+      color: #ffffff;
+      outline:none;
+      opacity: 1;
+      box-shadow:none;
+    }
+    input:-ms-input-placeholder{
+      color: #ffffff;opacity:0.5;
+    }
+    input::-webkit-input-placeholder{
+      color: #ffffff;opacity:0.5;
+    }
+  }
+  .login-bt{
+    .login{
+      width: 100%;
+      height: 4rem;
+      border-radius: 5px;
+      opacity: 0.5;
+      color: #3a6773;
+      background-color: #ffffff;
+      margin: 1rem 0;
+      border: none;
+    }
+    .forgot{
+      width: 100%;
+      height: 3.5rem;
+      color: #ffffff;
+    }
+  }
+}
+
+.ask-header {
+  margin-bottom: 0;
+}
+.topTitle{
+  a{
+    margin-left: 1rem;
+    h3{
+      display: inline-block;
+    }
+  }
+  img{
+    height: 40px;
+  }
+  .am-container{
+    max-width: none;
+    .am-topbar-brand{
+      padding-left: 0;
+    }
+  }
+}
+.topList{
+  //position: relative;
+  //right: 3rem;
+}
+.menuItem{
+  min-width: 14rem;
+}
+
+
+.ask-main {
+  flex: 1;
+}
+
+.ask-banner {
+  background-color: #f8f8f8;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.center{
+  text-align: center;
+}
+.left{
+  text-align: left;
+}
+.right{
+  text-align: right;
+}
+.ask-footer {
+  background-color: #555;
+  color: #999;
+  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  p {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+}
+.genson-left{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  z-index: 100;
+  width: 200px;
+  transition: width 0.5s;
+}
+.gen-slider-left{
+  position: absolute;
+  bottom: 120px;
+  //left: 0;
+  overflow-x: hidden;
+  top: 51px;
+  z-index: 100;
+  width: 100%;
+  transition: width 0.5s;
+  overflow-y: auto;
+  >.ant-menu{
+    min-height: 100%;
+    width: 100%;
+    background: #1d2b37;
+    .ant-menu-item-selected {
+      background-color: #428bca;
+    }
+    .ant-menu-vertical{
+      background: #131e27!important;
+    }
+  }
+  .ant-menu-dark .ant-menu-inline.ant-menu-sub{
+    background: #131e27;
+  }
+
+  //border-right: 1px solid #ccc;
+  li{
+    //color: #444;
+    ul{
+      margin: 0;
+    }
+  }
+}
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;
+  background-color: #aaaaaa;
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  border-radius: 10px;
+  background-color: #aaaaaa;
+}
+/*定义滑块，内阴影及圆角*/
+::-webkit-scrollbar-thumb{
+  ///*width: 10px;*/
+  //height: 20px;
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+.gen-slider-hide{
+  position: absolute;
+  bottom: 120px;
+  //left: 0;
+  //overflow-x: hidden;
+  top: 51px;
+  z-index: 100;
+  width: 100%;
+  transition: width 0.5s;
+  overflow-x: visible;
+  >.ant-menu{
+    min-height: 100%;
+    width: 100%;
+    background: #1d2b37;
+    .ant-menu-item-selected {
+      background-color: #428bca;
+    }
+    .ant-menu-vertical{
+      max-height: 400px;
+      overflow: auto;
+      background: #131e27!important;
+    }
+  }
+
+  .ant-menu-dark .ant-menu-inline.ant-menu-sub{
+    background: #131e27;
+  }
+
+  //border-right: 1px solid #ccc;
+  li{
+    //color: #444;
+    .hide-title{
+      display: none;
+    }
+    ul{
+      margin: 0;
+    }
+  }
+}
+.genson-easy-book{
+  position: relative;
+  overflow: auto;
+  height: 100%;
+  .line{
+    margin: 1rem 0;
+    display: inline-block;
+    width: 35%;
+    .desc{
+      position: absolute;
+      color: #b5b9bd;
+      font-size: 12px;
+    }
+    >button{
+      background-color: #5ca6fe;
+      border-color: #5ca6fe;
+    }
+  }
+}
+.gen-slider-top{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 51px;
+  background: #3f4951;
+  >div{
+    padding: 10px 2px;
+    height: 100%;
+  }
+}
+.genson-text-overflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.gen-slider-bottom{
+  position: absolute;
+  bottom: 0;
+  z-index: 101;
+  width: 100%;
+  height: 120px;
+  background: #1d2b37;
+  color: #f9fcfe;
+  text-align: left;
+  .gen-avatar{
+    height: 80px;
+    >div{
+      height: 100%;
+    }
+    .bottom-avatar{
+      padding: 18px 6px;
+      text-align: center;
+      .avatar{
+        //width: 100%;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+    }
+    .cmp{
+      padding: 20px 5px;
+      >div{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+  .logout{
+    height: 40px;
+    width: 100%;
+    bottom: 0;
+    background: #131e27;
+    .logout-button{
+      background: transparent;
+      border: none;
+      color: #909aa2;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
+.hide-button-show{
+  position: absolute;
+  z-index: 101;
+  left: 200px;
+}
+.hide-button-hide{
+  position: absolute;
+  z-index: 101;
+  left: 0;
+}
+.hide-slider-left{
+  width: 0;
+  transition: width 0.5s;
+}
+.gen-slider-content{
+  position: absolute;
+  bottom: 0px;
+  padding-left: 200px;
+  width: 100%;
+  top: 0px;
+  z-index: 99;
+  overflow-y: auto;
+  transition: width 0.5s;
+}
+.full-slider-content{
+  padding-left: 66px;
+  transition: width 0.5s;
+}
+.gen-certificate{
+  //margin: 8px 20px;
+  height: 100%;
+  overflow: visible;
+  >div{
+    min-height: 100%;
+  }
+  //.genson-home{
+  //  >div{
+  //    height:100%;
+  //  }
+  //}
+  .certificate-splice{
+    width: 100%;
+    >div{
+      width: 1140px;
+    }
+  }
+  .certificate-title{
+    //font-size: 20px;
+    text-align: center;
+  }
+  .certificate-header{
+    margin-top: 5px;
+    //padding: 5px;
+    border-top: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    >div{
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 48px;
+      height: 48px;
+      vertical-align: middle;
+      border: 1px solid #cccccc;
+      >div{
+        line-height: 24px;
+        height: 24px;
+        text-align: right;
+        >span{
+          letter-spacing:2px;
+        }
+      }
+    }
+    :first-child{
+      //border-left: 2px solid #cccccc;
+    }
+    :last-child{
+      //border-right: none;
+    }
+  }
+  .certificate-content{
+    .certificate-content-line{
+      //border: 1px solid #cccccc;
+      ::-webkit-scrollbar
+      {
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+      /*定义滚动条轨道 内阴影+圆角*/
+      ::-webkit-scrollbar-track
+      {
+        opacity: 0;
+        /*-webkit-box-shadow: inset 0 0 6px white;*/
+        /*border-radius: 10px;*/
+        /*background-color: white;*/
+      }
+      /*定义滑块 内阴影+圆角*/
+      ::-webkit-scrollbar-thumb
+      {
+        /*border-radius: 10px;*/
+        opacity: 0;
+        /*-webkit-box-shadow: inset 0 0 6px white;*/
+        /*background-color: white;*/
+      }
+      >div{
+        .ant-input-number{
+          border-radius: 0;
+          .ant-input-number-input-wrap{
+            background-image: url(../img/money_rp.png);
+            background-repeat: repeat-y;
+            background-size: contain;
+          }
+        }
+        >div{
+          line-height: 48px;
+          height: 48px;
+          position: absolute;
+          .ant-select-selection{
+            .ant-select-search{
+              width: 100%;
+            }
+            input{
+              border-radius: 0;
+              text-align: left;
+              letter-spacing: normal;
+              font-weight: normal;
+            }
+            line-height: 48px;
+            height: 48px;
+            border-radius: 0;
+            div{
+              line-height: 48px;
+              height: 48px;
+            }
+            >span{
+              display: none;;
+            }
+          }
+        }
+        >textarea{
+          height: 48px;
+          border-left: 1px solid #cccccc;
+          border-radius: 0;
+          resize: none;
+          border-right: 2px solid #cccccc;
+        }
+        input{
+          height: 2rem;
+          border-radius: 0;
+          text-align: right;
+          letter-spacing: 6px;
+          padding-right: 0;
+          font-size: 18px;
+          font-weight: 500;
+          background: transparent;
+        }
+      }
+      .gen-input{
+        width: 100%;
+        height: 48px;
+        border: 1px solid #cccccc;
+        //background: transparent;
+        background-size: contain;
+        background-image: url(../img/money_rp.png);
+        background-repeat: repeat-y;
+      }
+      input[type=number] {
+        -moz-appearance:textfield;
+      }
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .genson-usd-select{
+        width: 100%;
+        .ant-select-selection{
+          width: 100%;
+          //border-right: none;
+          display: inline-block;
+          >span{
+            display: inline-block;
+          }
+        }
+      }
+      .genson-usd-icon{
+        display: none;
+        float: right;
+        margin-top: 0;
+        font-size: 12px;
+        line-height: 46px;
+        border: 1px solid #ccc;
+        border-left: none;
+        width: 15%;
+        color: #999;
+        text-align: right;
+      }
+      .gen-exchange{
+        padding-left: 4px;
+        width: 100%;
+        border: 1px solid #cccccc;
+        >div{
+          line-height: 24px;
+        }
+        input{
+          line-height: 22px;
+          border: none;
+          font-size: 1rem;
+          letter-spacing: normal;
+          box-shadow: none;
+          text-align: left;
+        }
+      }
+      .gen-exchange-num{
+        //line-height: 24px;
+        width: 100%;
+        padding: 0 2px;
+        border: 1px solid #cccccc;
+        input{
+          line-height: 2rem;
+          border: none;
+          font-size: 1rem;
+          letter-spacing: normal;
+          box-shadow: none;
+          text-align: left;
+        }
+        span{
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+    .certificate-content-select{
+      position: relative;
+      .ant-select-selection{
+        border-left: 2px solid #ccc;
+      }
+      .money{
+        width: 100%;
+        font-size: 12px;
+        color: #cccccc;
+        position: absolute;
+        top: 34px;
+        //left: 1rem;
+        line-height: 12px;
+        height: 12px;
+        padding: 0 1rem;
+      }
+    }
+  }
+  .certificate-foot{
+    >div{
+      line-height: 48px;
+      height: 48px;
+      border: 1px solid #cccccc;
+    }
+    .certificate-foot-num{
+      //height: 2rem;
+      line-height: 48px;
+      height: 48px;
+      border-radius: 0;
+      text-align: right;
+      letter-spacing: 6px;
+      //padding-left: 0;
+      //padding-right: 3px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .certificate-des{
+    //line-height: 48px;
+    //height: 48px;
+    border: 1px solid #cccccc;
+    border-top: 0;
+    >textarea{
+      height: 48px!important;
+      border-radius: 0;
+      resize: none;
+    }
+  }
+}
+.vertical-center-modal {
+  text-align: center;
+  white-space: nowrap;
+}
+.vertical-center-modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 0;
+}
+.vertical-center-modal .ant-modal {
+  display: inline-block;
+  vertical-align: middle;
+  top: 0;
+  text-align: left;
+}
+
+.certificate-tips{
+  border: none;
+
+  .ant-tooltip-arrow{
+    border-left-color: transparent;
+    border-right-color:transparent;
+  }
+  .ant-tooltip-inner{
+    color: #444444;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 8px 0;
+  }
+}
+.certificate-table{
+  margin: 10px 0;
+  .ant-table-thead{
+    th{
+      background-color: #c9dfa7;
+    }
+  }
+  .ant-table-body{
+    tbody{
+      tr:nth-child(2n+1){
+        background-color: #f2ffbf;
+      }
+      tr>td{
+        padding: 2px 8px;
+      }
+    }
+  }
+  td{
+    //text-align: center;
+  }
+  .ant-table-thead > tr > th{
+    padding: 4px 8px!important;
+    text-align: center;
+    background-color: #c9dfa7;
+  }
+  .ant-table-footer{
+    padding: 0;
+    background-color: #c9dfa7;
+    .genson-table-footer{
+      width: 100%;
+      div{
+        //line-height: 3rem;
+        padding: 10px 14px;
+        display: inline-block;
+        //border-right: 1px solid #e9e9e9;
+        //margin-left: -1px;
+        text-align: center;
+      }
+      .title{
+        padding-right: 0;
+        padding-left: 16px!important;
+      }
+      .right{
+        text-align: right;
+      }
+    }
+  }
+}
+.color-black{
+  color: black;
+}
+.bg-money-rp{
+  //text-align: right;
+  background-image: url(../img/money_rp.png);
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+.ant-select-dropdown-menu-item-selected{
+  background-color:#49a9ee;
+}
+.ant-select-dropdown-menu-item-active{
+  background-color:#7ec2f3!important;
+}
+.ant-select-dropdown-menu-item{
+  color: black;
+}
+.ant-select-dropdown-menu-item-disabled{
+  color: rgba(0,0,0,.25);
+}
+.gen-font-grey{
+  color: #cccccc;
+  margin-top: 1rem;
+}
+ul li{
+  overflow: visible!important;
+  white-space: normal!important;
+}
+.genson-home{
+  background: #eee;
+  .gen-main-head{
+    //text-align: center;
+    position: relative;
+    img{
+      width: 50px;
+      height: 50px;
+    }
+    .link{
+      margin: 0 10px;
+      display: inline-block;
+      h2{
+        font-weight:bold;
+      }
+    }
+    .book{
+      border-radius: 8px;
+      width: 200px;
+      display: inline-block;
+      background: -webkit-linear-gradient(left bottom, #fe6c88 , #ff988b); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, #fe6c88 , #ff988b); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right, #fe6c88 , #ff988b); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, #fe6c88 , #ff988b); /* 标准的语法 */
+    }
+    .table{
+      border-radius: 8px;
+      width: 200px;
+      display: inline-block;
+      background: -webkit-linear-gradient(left bottom, #6c80fe , #28cffc); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, #6c80fe , #28cffc); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right, #6c80fe , #28cffc); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, #6c80fe , #28cffc); /* 标准的语法 */
+    }
+    .folder{
+      border-radius: 8px;
+      width: 200px;
+      display: inline-block;
+      background: -webkit-linear-gradient(left bottom, #09b5e0 , #27edef); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, #09b5e0 , #27edef); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right, #09b5e0 , #27edef); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, #09b5e0 , #27edef); /* 标准的语法 */
+    }
+    .balance{
+      border-radius: 8px;
+      width: 200px;
+      display: inline-block;
+      background: -webkit-linear-gradient(left bottom, #777cfe , #c782ee); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, #777cfe , #c782ee); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right, #777cfe , #c782ee); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, #777cfe , #c782ee); /* 标准的语法 */
+    }
+  }
+  .gen-main-fun{
+    min-height: 500px;
+    background-color: #ffffff;
+    border: 1px solid #888888;
+    border-radius: 5px;
+    margin: -1px;
+    padding: 10px;
+    >div{
+      width: 100%;
+    }
+    .step-block{
+      text-align: center;
+      background-color: rgba(215, 236, 253, 0.34);
+      border-radius: 8px;
+      padding: 5px;
+      img{
+        //width: 60px;
+      }
+    }
+    .direct{
+      img{
+        width: 40px;
+        opacity: 0.4;
+      }
+    }
+  }
+  .gen-main-list{
+    display: none;
+    min-height: 500px;
+    background-color: #ffffff;
+    border: 1px solid #888888;
+    border-radius: 5px;
+    margin: -1px;
+    padding: 10px;
+    >div{
+      width: 100%;
+    }
+  }
+}
+
+#components-tree-demo-customized-icon{
+  .ant-tree-iconEle {
+    //position: absolute;
+    //left: 0;
+    background: #fff;
+  }
+  .ant-tree li a.ant-tree-node-selected{
+    background-color: #fff;
+    .ant-tree-title{
+      background-color: #d2eafb;
+    }
+  }
+  .ant-tree-iconEle::after {
+    font-size: 12px;
+    zoom: 1;
+    display: inline-block;
+    font-family: 'anticon';
+    text-rendering: optimizeLegibility;
+    color: #549dff;
+    transition: transform .3s ease;
+    margin-top: 2px;
+    background: #fff;
+  }
+  .ant-tree-iconEle.ant-tree-icon__docu::after {
+    content: "\E664";
+    //margin-left: -15px;
+  }
+  .ant-tree-iconEle.ant-tree-icon__open::after {
+    content: "\E699";
+    //margin-left: -15px;
+  }
+  .ant-tree-iconEle.ant-tree-icon__close::after {
+    content: "\E662";
+    //margin-left: -15px;
+  }
+  .ant-tree-switcher {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+  }
+  .ant-tree-switcher::after {
+    opacity: 0;
+  }
+
+  .ant-tree-switcher .ant-tree-noline_close{
+    margin-right: -18px;
+  }
+  .ant-tree-switcher .ant-tree-noline_open{
+    margin-right: -18px;
+  }
+  .ant-tree-switcher{
+    margin-right: -18px;
+  }
+}
+.contentStyle{
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.genson-bind-img{
+  position: fixed;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  button{
+    font-size: 45px!important;
+    width: 50px!important;
+    height: 50px!important;
+    >i{
+      display: inline;
+    }
+  }
+}
+.genson-margin-top{
+  margin-top: 1rem;
+  .right-title{
+    h3{
+      text-align: center;
+      margin: 0 auto;
+      width: 4rem;
+      background-color: #9acaff;
+      border-radius: 5px;
+    }
+  }
+  .right-content{
+    h3{
+      text-align: right;
+      margin: 0 auto;
+    }
+  }
+}
+.genson-font-bold{
+  font-weight: bold;
+}
+.block-center{
+  margin: 0 auto;
+}
+.genson-pagination{
+  float: right;
+  margin: 1rem;
+}
+.genson-footer{
+
+  >div{
+    display: inline-table;
+    text-align: center;
+    border: 1px solid;
+  }
+}
+.genson-input{
+  max-width: 240px!important;
+  >input{
+    max-width: 240px!important;
+  }
+}
+.genson-block-center{
+  display: block;
+  margin: 0 auto;
+}
+.custom-card {
+  padding: 10px 16px;
+}
+.custom-card p {
+  color: #999;
+}
+
+textarea {
+  resize : none;//去掉右下角的
+}
+.genson-register{
+  margin: 0 auto;
+  width: 480px;
+  margin-top: 120px;
+  border-radius: 5px;
+  box-shadow: 2px 2px #eee;
+  background-color: white;
+  .register-bt{
+    width: 40%;
+    height: 3.5rem;
+    border-radius: 0 0 5px 5px;
+    display: block;
+    margin: 0 auto;
+    background-color: #66aefe;
+    border: none;
+  }
+  .register-input{
+    width: 80%;
+    padding: 5px 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    img{
+      width: 2rem;
+      height: 2rem;
+    }
+    input{
+      width: 80%;
+      padding-left: 1.5rem;
+      border: none;
+      font-size: 14px;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+  .bottom-content{
+    text-align: center;
+    margin: 1rem 0;
+    .register-submit{
+      display: block;
+      height: 3rem;
+      width: 50%;
+      margin: 0 auto;
+      background: -webkit-linear-gradient(#9acaff, #90a0fe); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(#9acaff, #90a0fe); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(#9acaff, #90a0fe); /* Firefox 3.6 - 15 */
+      background: linear-gradient(#9acaff, #90a0fe); /* 标准的语法 */
+      border: none;
+    }
+    .register-back{
+      display: block;
+      font-size: 16px;
+      margin-top: 1rem;
+      color: #5ca6fe;
+    }
+  }
+}
+.genson-note-overflow{
+  max-width: 7em;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.genson-title{
+  color: white;
+  display: inline;
+  vertical-align: -40%;
+  height: 1rem;
+  div{
+    max-width: 20rem;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+}
+.genson-max-width{
+  max-width: 860px;
+}
+.genson-thumbnail{
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-right: 2rem;
+  border-radius: 5px;
+  position: relative;
+  transition: all .3s;
+  img{
+    width: 100px;
+    height: 100px;
+    transition: all .3s;
+  }
+  //img:hover{
+  //  opacity: 0.5;
+  //}
+  .show{
+    display: none;
+    transition: all .3s;
+    position: absolute;
+    width: 100px;
+    line-height: 100px;
+    top: 5px;
+    text-align: center;
+  }
+  .setBlock{
+    transition: all .3s;
+    display: block;
+    color: white;
+    background-color:rgba(0,0,0,0.5);
+  }
+}
+@media screen and (max-width: 850px) {
+.genson-router{
+    display: none;
+  }
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #section-to-print,
+  #section-to-print * {
+    visibility: visible;
+  }
+  #section-to-print {
+    margin: 0 auto;
+  }
+  .section-not-to-print {
+    display: none;
+  }
+
+}
