@@ -1,54 +1,36 @@
 {
-  "name": "genson-react",
-  "version": "1.1.0",
-  "description": "谨信新会计系统",
-  "keywords": [
-    "react-component",
-    "grid",
-    "genson",
-    "react",
-    "pagination",
-    "sort"
-  ],
+  "private": true,
   "scripts": {
-    "build": "webpack --progress --colors --display-reasons --display-used-exports --display-optimization-bailout",
-    "dev": "webpack-dev-server --host 0.0.0.0 --devtool eval --progress --profile --colors --inline --hot --content-base build"
+    "start": "roadhog server",
+    "build": "roadhog build",
+    "lint": "eslint --ext .js src test",
+    "precommit": "npm run lint"
+  },
+  "engines": {
+    "install-node": "6.11.1"
   },
   "dependencies": {
-    "babel-runtime": "^6.5.0",
-    "extract-text-webpack-plugin": "^2.1.2",
-    "react": "^15.3.0",
-    "react-datepicker": "^0.39.0",
-    "react-dates": "^13.0.2",
-    "react-dom": "^15.3.0",
-    "react-router": "^3.0.2"
+    "babel-plugin-dva-hmr": "^0.4.0",
+    "babel-plugin-import": "^1.6.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
+    "dva": "^2.1.0",
+    "i": "^0.3.6",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
   },
   "devDependencies": {
-    "amazeui": "^2.7.1",
-    "amazeui-react": "^1.0.1",
-    "antd": "^2.12.0",
-    "babel-core": "^6.7.4",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-import": "^1.4.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.5.0",
-    "compression-webpack-plugin": "^0.4.0",
-    "css-loader": "^0.23.1",
-    "extract-text-webpack-plugin": "^2.1.2",
-    "html-webpack-plugin": "^2.28.0",
-    "less": "^2.7.2",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
-    "react-fetch": "^0.0.9",
-    "react-hot-loader": "^1.3.1",
-    "react-tap-event-plugin": "^0.2.2",
-    "store": "^2.0.4",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.15.0",
-    "webpack-dev-server": "^1.16.5"
-  },
-  "author": "junhui Liu",
-  "license": "genson"
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "expect": "^1.20.2",
+    "husky": "^0.12.0",
+    "redbox-react": "^1.4.3",
+    "roadhog": "^1.2.1"
+  }
 }
